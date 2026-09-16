@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Deluxe Pro - Soft Edition</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Screen Loading -->
+    <div id="loadingScreen" class="loading-overlay">
+        <div class="loader-content">
+            <div class="snake-loader">
+                <span class="dot d1"></span>
+                <span class="dot d2"></span>
+                <span class="dot d3"></span>
+                <span class="dot d4"></span>
+            </div>
+            <h2 class="loading-title">SNAKE DELUXE</h2>
+            <p class="loading-text">Memuat Game...</p>
+            <div class="progress-bar"><div class="progress-fill"></div></div>
+        </div>
+    </div>
+
+    <div class="game-container">
+        <!-- Screen Login -->
+        <div id="loginScreen" class="screen card glass-card">
+            <div class="badge">V2.0 SOFT EDITION</div>
+            <h1 class="title">SNAKE DELUXE</h1>
+            <p class="subtitle">Petualangan Ular Klasik dengan Nuansa Soft Modern</p>
+            
+            <form id="loginForm">
+                <div class="input-group">
+                    <label for="usernameInput">Nama Pemain</label>
+                    <input type="text" id="usernameInput" placeholder="Masukkan Nama Kamu..." autocomplete="off" maxlength="15" required>
+                </div>
+                <button type="submit" class="btn btn-primary">
+                    <span>Mulai Bermain</span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </button>
+            </form>
+
+            <div class="food-legend">
+                <span class="legend-title">Jenis Makanan:</span>
+                <div class="legend-items">
+                    <span class="legend-item"><i class="dot-food f-red"></i> 10 Poin</span>
+                    <span class="legend-item"><i class="dot-food f-gold"></i> 30 Poin</span>
+                    <span class="legend-item"><i class="dot-food f-blue"></i> 20 Poin</span>
+                    <span class="legend-item"><i class="dot-food f-purple"></i> 15 Poin</span>
+                    <span class="legend-item"><i class="dot-food f-green"></i> 25 Poin</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Screen Game -->
+        <div id="gameScreen" class="screen" style="display: none;">
+            <!-- Top HUD / Header -->
+            <div class="hud glass-hud">
+                <div class="hud-item">
+                    <span class="hud-label">Pemain</span>
+                    <span id="playerDisplay" class="hud-value">Player</span>
+                </div>
+                <div class="hud-item">
+                    <span class="hud-label">Skor</span>
+                    <span id="scoreDisplay" class="hud-value highlight">0</span>
+                </div>
+                <div class="hud-item">
+                    <span class="hud-label">Tertinggi</span>
+                    <span id="highScoreDisplay" class="hud-value">0</span>
+                </div>
+                <div class="hud-item">
+                    <span class="hud-label">Level</span>
+                    <span id="levelDisplay" class="hud-value level">1</span>
+                </div>
+            </div>
+
+            <!-- Canvas Game -->
+            <div class="canvas-wrapper">
+                <canvas id="gameCanvas" width="800" height="560"></canvas>
+            </div>
+
+            <!-- Bottom Bar Controls -->
+            <div class="bottom-bar">
+                <div class="controls-hint">
+                    Gunakan <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> atau <kbd>Panah</kbd> untuk bergerak &bull; <kbd>R</kbd> Restart &bull; <kbd>P</kbd> Pause
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
