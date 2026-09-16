@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Snake Deluxe Soft Edition</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Loading Screen Overlay -->
+    <div id="loadingScreen" class="loading-overlay">
+        <div class="loader-card">
+            <div class="spinner"></div>
+            <h2>Memuat Game...</h2>
+            <p>Menyiapkan arena Snake Soft Edition</p>
+        </div>
+    </div>
+
+    <div class="game-container">
+        <!-- Screen Login -->
+        <div id="loginScreen" class="screen card">
+            <div class="logo-badge">🐍</div>
+            <h1 class="title">SNAKE DELUXE</h1>
+            <p class="subtitle">Soft & Playful Edition</p>
+            <form id="loginForm">
+                <input type="text" id="usernameInput" placeholder="Ketik nama kamu..." autocomplete="off" required>
+                <button type="submit" class="btn btn-primary">Mulai Bermain ✨</button>
+            </form>
+        </div>
+
+        <!-- Screen Game -->
+        <div id="gameScreen" class="screen" style="display: none;">
+            <!-- Top HUD / Header -->
+            <div class="hud">
+                <div class="hud-item">
+                    <span class="hud-label">Pemain</span>
+                    <span id="playerDisplay" class="hud-value">Player</span>
+                </div>
+                <div class="hud-item">
+                    <span class="hud-label">Skor</span>
+                    <span id="scoreDisplay" class="hud-value highlight">0</span>
+                </div>
+                <div class="hud-item">
+                    <span class="hud-label">High Score</span>
+                    <span id="highScoreDisplay" class="hud-value">0</span>
+                </div>
+                <div class="hud-item">
+                    <span class="hud-label">Level</span>
+                    <span id="levelDisplay" class="hud-value level">1</span>
+                </div>
+            </div>
+
+            <!-- Canvas Game Wrapper -->
+            <div class="canvas-wrapper">
+                <canvas id="gameCanvas" width="800" height="580"></canvas>
+            </div>
+
+            <!-- D-Pad Joystick untuk Mobile / HP -->
+            <div class="joystick-container">
+                <div class="dpad">
+                    <button class="dpad-btn up" id="btnUp">▲</button>
+                    <button class="dpad-btn left" id="btnLeft">◄</button>
+                    <div class="dpad-center"></div>
+                    <button class="dpad-btn right" id="btnRight">►</button>
+                    <button class="dpad-btn down" id="btnDown">▼</button>
+                </div>
+            </div>
+
+            <div class="controls-hint">
+                Desktop: <b>W A S D / Arrow</b> | HP: <b>Gunakan Tombol D-Pad</b>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
